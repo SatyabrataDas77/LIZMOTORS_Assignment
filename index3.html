@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <ul>
+      <li>
+        <span class="folder">Research</span>
+        <ul class="nested">
+          <li>
+            <span class="folder-research">External </span>
+            <ul class="nested">
+              <li>
+                <span class="folder1">B2C</span>
+                <ul class="nested">
+                    <li class="folder-last" onmouseover="displayImage(this)" onmouseout="hideImage(this)">
+                        <span>
+                            Online
+                        </span>
+                        <div class="image-container">
+                          <img src="lizmotors.jpeg" alt="">
+                        </div>
+                      </li>
+                  <li class="folder-last">Interview</li>
+                  <li class="folder-last">Public</li>
+                  <li class="folder-last">Health</li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nested">
+              <li>
+                <span class="folder1">B2C</span>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="folder-research">Internal</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="folder">Planning</span>
+        <ul class="nested">
+            <li>
+                <span class="folder-research">PRD</span>
+              </li>
+              <li>
+                <span class="folder-research">Specs</span>
+              </li>
+        </ul>
+      </li>
+      <li>
+        <span class="folder">Deigning</span>
+        <ul class="nested">
+            <li>
+                <span class="folder-research">Hardware</span>
+              </li>
+              <li>
+                <span class="folder-research">Software</span>
+              </li>
+        </ul>
+      </li>
+      <li>
+        <span class="folder">Manufacturing</span>
+        <ul class="nested">
+            <li>
+                <span class="folder-research">Material</span>
+              </li>
+              <li>
+                <span class="folder-research">Production</span>
+              </li>
+        </ul>
+      </li>
+      <li>
+        <span class="folder">Sales/Marketing</span>
+        <ul class="nested">
+            <li>
+                <span class="folder-research">Online</span>
+              </li>
+              <li>
+                <span class="folder-research">Dealership</span>
+              </li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+        const Research =  document.querySelectorAll('.folder');
+        for(const folder of Research) {
+            folder.onclick = ()=>{
+                const target_list = folder.nextElementSibling;
+                target_list.style.maxHeight = target_list.style.maxHeight ? null : "100vh" ;
+
+            }
+        }
+        const External =  document.querySelectorAll('.folder1');
+        for(const folder of External) {
+            folder.onclick = ()=>{
+                const target_list = folder.nextElementSibling;
+                target_list.style.maxHeight = target_list.style.maxHeight ? null : "100vh" ;
+
+            }
+        }
+        const B2C=  document.querySelectorAll('.folder-research');
+        for(const folder of B2C) {
+            folder.onclick = ()=>{
+                const target_list = folder.nextElementSibling;
+                target_list.style.maxHeight = target_list.style.maxHeight ? null : "100vh" ;
+
+            }
+        }
+
+        function displayImage(element) {
+      const imageContainer = element.querySelector('.image-container');
+      imageContainer.style.display = 'block';
+    }
+
+    function hideImage(element) {
+      const imageContainer = element.querySelector('.image-container');
+      imageContainer.style.display = 'none';
+    }
+
+    </script>
+  </body>
+</html>

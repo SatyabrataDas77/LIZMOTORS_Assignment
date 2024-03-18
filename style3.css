@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #05111b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+    color: #888;
+}
+
+ul span.folder{
+    color: #f37474;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+ul span.folder:hover,
+ul span.folder:hover::before
+
+{
+
+    color:ghostwhite;
+   
+}
+
+ul.nested{
+    position: relative;
+    max-height: 0;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -ms-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+}
+
+ul.nested::before {
+    position: absolute;
+    content: "";
+    left: 7%;
+    width: 1.5rem;
+    height: 100%;
+    border-left: 1.3px solid #54ee85;
+}
+
+ul.nested li {
+    position: relative;
+    padding-left: 3rem;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+ul.nested li::after {
+    position: absolute;
+    content: "";
+    left: 7.5%;
+    top: .32rem;
+    width: 1.5rem;
+    height: 1rem;
+    border-bottom: 1.3px solid #54ee85;
+}
+ul span.folder::before{
+    display: inline-block;
+    content: "🗀";
+    margin-right: .4rem;
+    font-size: 2.5rem;
+}
+li span.folder-research{
+    padding-left: .5rem;
+    color: #3269df;
+    font-size: 2rem;
+    cursor: pointer;
+}
+li span.folder-research::before{
+    display: inline-block;
+    content: "🗁";
+    margin-right: .4rem;
+    font-size: 2rem;
+}
+li span.folder1{
+    padding-left: .5rem;
+    color: #54ee85;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+li span.folder1::before{
+    display: inline-block;
+    content: "🗁";
+    margin-right: .4rem;
+    font-size: 1.5rem;
+}
+ul li.folder-last{
+    padding-left: 4rem;
+    color: #dcd61c;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+ul li.folder-last::before{
+    display: inline-block;
+    content: "🖻";
+    margin-right: .5rem;
+    font-size: 1rem;
+}
+.image-container {
+    display: none;
+    position: relative;
+    top: 100%;
+    left: 0;
+   
+    width: 350px; /* Adjust as needed */
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.folder-last:hover .image-container {
+    display: block;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+}
